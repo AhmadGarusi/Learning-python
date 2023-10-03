@@ -2,19 +2,19 @@
 
 def primeCounter(n):
     numIsPrime = True
-    i = 0
     
-    for i in range(2, n):
+    for i in range(2, int(n**2)+1 ):
         if n % i == 0:
             numIsPrime = False
             break
     
     return numIsPrime
 
-choosen = int( input( "choose your number: " ) )
+primeCount = 0
 
-if primeCounter( choosen ):
-    print( "number is prime." )
+for i in range( 1, 100 ):
+    if primeCounter(i):
+        primeCount = primeCount + 1
+        print (i)
 
-else:
-    print( "not prime :(" )
+print( primeCount )
